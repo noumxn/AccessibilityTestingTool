@@ -1,5 +1,18 @@
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 
+# Metadata
+Thumbs.db
+.DS_Store
+.git/
+.vscode/
+
+# Lock Files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+pnpm-lock.json
+bun.lockb
+
 # Logs
 
 logs
