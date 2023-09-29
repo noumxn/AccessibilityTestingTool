@@ -1,5 +1,8 @@
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 
+# HTML file
+output.html
+
 # node_modules
 .node_modules/
 
