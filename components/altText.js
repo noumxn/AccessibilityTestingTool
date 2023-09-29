@@ -1,6 +1,9 @@
 import chalk from 'chalk';
 
-// Check alt text
+/*
+ * @description PERCIEVABLE: Text Alternatives: Check for appropriate alt text for images, icons, and non-text content.
+ **/
+
 export const checkAltText = (document) => {
   try {
     const images = document.querySelectorAll('img, [role="img"]');

@@ -1,6 +1,9 @@
 import chalk from 'chalk';
 
-// Check for aria-label or aria-labelledby
+/*
+ * @description PERCIEVABLE: Text Alternatives: Verify the use of aria-label and aria-labeled by for complex elements.
+ **/
+
 export const checkAriaAttr = (document) => {
   try {
     const ariaElements = document.querySelectorAll('[aria-label]:not([aria-labelledby]):not([aria-label]), [aria-labelledby]:not([aria-label]):not([aria-labelledby])');

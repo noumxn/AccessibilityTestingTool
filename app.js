@@ -27,7 +27,6 @@ import {JSDOM} from 'jsdom';
       console.log(chalk.green("HTML is Valid!"));
     } else {
       console.error(chalk.red("HTML is not valid. This is a list of Issues: "), validationResult);
-      return
     }
   } catch (e) {
     console.error('Error:', e);
