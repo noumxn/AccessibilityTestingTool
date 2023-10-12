@@ -3,9 +3,12 @@
   "module": "app.js",
   "type": "module",
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
   },
   "scripts": {
+    "test": "mocha --require esm tests/**/*.test.js",
     "start": "node app.js"
   },
   "peerDependencies": {

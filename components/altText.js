@@ -6,16 +6,20 @@ import chalk from 'chalk';
 
 export const checkAltText = (document) => {
   try {
+    let output = "";
     const images = document.querySelectorAll('img, [role="img"]');
     images.forEach((element, index) => {
       const alt = element.getAttribute('alt');
       if (!alt) {
-        console.error(chalk.red('\nImage or icon without appropriate alt text:'), chalk.cyan(element.outerHTML));
+        output = output + `${chalk.red('\nImage or icon without appropriate alt text:')}${chalk.cyan(element.outerHTML)}`;
       }
-      return
     });
-    console.log(chalk.green('Alt Text test passed!'));
+    if (output.length === 0) {
+      return chalk.green('Alt Text test passed!');
+    } else {
+      return output;
+    }
   } catch (e) {
-    console.error(chalk.red('Error parsing the HTML file:'), e);
+    return `${chalk.red('Error parsing the HTML file:')}${e}`;
   }
 };

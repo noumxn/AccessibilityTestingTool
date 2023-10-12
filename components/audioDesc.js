@@ -6,17 +6,20 @@ import chalk from 'chalk';
 
 export const checkAudioDesc = (document) => {
   try {
+    let output = "";
     const videoElements = document.querySelectorAll('video');
-    videoElements.forEach((element, index) => {
+    for (let element of videoElements) {
       const hasAudioDescription = element.querySelector('track[kind="descriptions"]');
-
       if (!hasAudioDescription) {
-        console.error(chalk.red('\nMultimedia element without audio descriptions:'), chalk.cyan(element.outerHTML));
+        output = output + `${chalk.red('\nMultimedia element without audio descriptions:')}${chalk.cyan(element.outerHTML)}`
       }
-    });
-
-    console.log(chalk.green('Multimedia Audio Description test passed!'));
+    }
+    if (output.length === 0) {
+      return chalk.green('Multimedia Audio Description test passed!')
+    } else {
+      return output;
+    }
   } catch (e) {
-    console.error(chalk.red('Error parsing the HTML file:'), e);
+    return `${chalk.red('Error parsing the HTML file:')}${e}`;
   }
 };
